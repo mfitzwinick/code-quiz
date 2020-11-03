@@ -1,11 +1,12 @@
 
 //#Pseudo Code//
-
 //1. Create a button to click -event listener- to start quiz
-//hide start button
-//have timer appear
+//hide start button after it is clicked once
+//have timer begin countdown
+//Create a submit button with add event listner
 //have question div appear
-//2. At click, first question appears (prompt?)
+//create an answers array?
+//2. At click, first question appears - append object?
 //3. After input, next question appears
 // 4. Wrong answers deduct 10 seconds from the clock
 // 5. Quiz ends when all questions are answered OR when time runs out.
@@ -14,26 +15,30 @@
 var start = document.querySelector(".start")
 var timeRemaining = 60
 const timerDisplay = document.querySelector("#time-shown")
+var answers = [];
+
 
 start.addEventListener("click", function(){
-    timeRemaining --;
-    countdownText();
+    timeRemaining--;
+    countDownText();
+    start.style.display='none'
 });
 
 function countDownText() {
-    setInterval (function(){
+    var myCounter=setInterval (function(){
         timerDisplay.textContent = timeRemaining
-        timeRemaining --
+        timeRemaining--;
+        if (timeRemaining<=0) {
+            clearInterval(myCounter)
+            alert ("Times Up!"+"Your score is ???");
+            return;
+        };
     }, 1000)
 }
-    if (timerDisplay<=0) {
-        clearInterval(timeRemaining=0)
-        alert ("Times Up!"+"Your score is ???");
-    };
-
 
 
 // var questions =
-//     { a: "", a1: "" }
-// { b: "" }
-// { c: "" }
+// {a: "What is a dog?", a1: "a piece of wood",  a2: "your BF", a3:"a chemical", a4: "a vacation"}
+// {b: "Dogs Are Great", b1: "TRUE",  b2: "False"}
+// {c: "Which of these is a dog?", c1: "Primate" c2: "Poodle" c3: "Arachnid" }
+
