@@ -41,7 +41,7 @@ start.addEventListener("click", function () {
     countDownText();
     start.style.display = 'none'
     platter.style.display = 'block'
-    next();
+    next(0);
 });
 
 //Have timer start and end at 0//
@@ -62,7 +62,7 @@ var questions = [
     {
         q: "What is a dog?",
         pickOne: [
-            "A piece of wood",
+            "your BFF",
             "your BFF",
             "a chemical",
             "a vacation"],
@@ -88,66 +88,77 @@ var questions = [
         answers: "asdsaFF"
     }]
 //create for loop for questions//_--------------------------------------------
-
-function next() {
-    for (var i = 0; i < questions.length; i++) {
+var currentQuestion = 0
+function next(i) {
+    // for (var i = 0; i < questions.length; i++) {
+        currentQuestion=i
+    
         // var qBox =document.createElement("div")
         questionBoxH1.textContent = questions[i].q
         choiceA.textContent = questions[i].pickOne[0]
         choiceB.textContent = questions[i].pickOne[1]
         choiceC.textContent = questions[i].pickOne[2]
         choiceD.textContent = questions[i].pickOne[3]
-    }
-    if (questions == questions.length) {
+    // }
+    currentQuestion=i+1
+    if (i == questions.length-1) {
         return;
     }
+};
+choiceA.addEventListener("click", function () {
+   
+    if (questions[currentQuestion].pickOne[0]===questions[currentQuestion].answers) {
+        myScore.textContent = startingScore;
+        startingScore + 10;
+        alert("CORRECT!")
+    }
+    else {
+        timeRemaining - 10;
+        alert("INCORRECT ANSWER")
+    };
+    next(currentQuestion);
+})
+    choiceB.addEventListener("click", function () {
+        if (questions[currentQuestion].pickOne[0]===questions[currentQuestion].answers) {
+            myScore.textContent = startingScore;
+            startingScore + 10;
+            alert("CORRECT!")
+        }
+        else {
+            timeRemaining - 10;
+            alert("INCORRECT ANSWER")
+        };
+    next(currentQuestion);
+})
+        choiceC.addEventListener("click", function () {
+          
+            if (questions[currentQuestion].pickOne[0]===questions[currentQuestion].answers) {
+                myScore.textContent = startingScore;
+                startingScore + 10;
+                alert("CORRECT!")
+            }
+            else {
+                timeRemaining - 10;
+                alert("INCORRECT ANSWER")
+            };
+            next(currentQuestion);
+        })
+        choiceD.addEventListener("click", function () {
+                   
+                    if (questions[currentQuestion].pickOne[0]===questions[currentQuestion].answers) {
+                        myScore.textContent = startingScore;
+                        startingScore + 10;
+                        alert("CORRECT!")
+                    }
+                    else {
+                        timeRemaining - 10;
+                        alert("INCORRECT ANSWER")
+                    };
+                    next(currentQuestion);
+                })
 
-    // // }
-    // // }
-    // choiceA.addEventListener("click", function () {
-    //     next();
-    //     if (pickOne ("") = answers ("") {
-    //         myScore.textContent = startingScore;
-    //         startingScore + 10;
-    //         alert("CORRECT!")
-    //     }
-    //     else {
-    //         timeRemaining - 10;
-    //         alert("INCORRECT ANSWER")
-    //     };
-    //     choiceB.addEventListener("click", function () {
-    //         next();
-    //         if (answers[i]=true) {
-//                 myScore.textContent = startingScore;
-//                 startingScore + 10;
-//                 alert("CORRECT!")
-//             }
-//             else {
-//                 timeRemaining - 10;
-//                 alert("INCORRECT ANSWER")
-//             };
-//             choiceC.addEventListener("click", function () {
-//                 next();
-//                 if (answers[i]==true) {
-//                     myScore.textContent = startingScore;
-//                     startingScore + 10;
-//                     alert("CORRECT!")
-//                 }
-//                 else {
-//                     timeRemaining - 10;
-//                     alert("INCORRECT ANSWER")
-//                 };
-//                 choiceD.addEventListener("click", function () {
-//                     next();
-//                     if (answers[i]=true) {
-//                         myScore.textContent = startingScore;
-//                         startingScore + 10;
-//                         alert("CORRECT!")
-//                     }
-//                     else {
-//                         timeRemaining - 10;
-//                         alert("INCORRECT ANSWER")
-//                     };
+
+
     //     questions[0].pickOne
     // }
 
