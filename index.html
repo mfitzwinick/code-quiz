@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CODE QUIZ</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-        <h1>Coding Quiz!</h1>
-        <h2>Timer: <span id="time-shown">60</span></h2>
-        <p>When you press START, the quiz begins.</p>
 
-        <p>You will have 60 seconds total to complete the quiz, BUT... BE CAREFUL!</p>
-         <p>For every answer you submit that is incorrect, 10 seconds will be deducted from your time!
-         </p>
-         <p>When you finish, don't forget to log your score!</p>
-       
-<button class="start">START</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CODE QUIZ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-<div class="question-platter">
+<body>
+  <div class="container">
+    <h1>Coding Quiz!</h1>
+    <h2>Timer: <span id="time-shown">60</span></h2>
+    <p>When you press START, the quiz begins.</p>
+    <p>You will have 60 seconds total to complete the quiz, BUT... BE CAREFUL!</p>
+    <p>For every answer you submit that is incorrect, 10 seconds will be deducted from your time!
+    </p>
+    <p>When you finish, don't forget to log your score!</p>
 
-  
-    <button class="submit">SUBMIT</button>
+    <button class="start">START</button>
 
-  </div>
-
-</div>
-
-
-        </div>
-
+    <div class="question-platter">
+      <br>
+      <h1 class="question-box">QUESTION HERE</h1>
+      <br>
+      <button class="button-choice" id="choice-a">AAAAA</button>
+      <br>
+      <br>
+      <br>
+      <button class="button-choice" id="choice-b">BBBBB</button>
+      <br>
+      <br>
+      <br>
+      <button class="button-choice" id="choice-c">CCCCC</button>
+      <br>
+      <br>
+      <br>
+      <button class="button-choice" id="choice-d">DDDDDD</button>
+      <br>
+      <br>
+      <br>
     </div>
 
+    <div class="score-box">FINAL SCORE</div>
+    <!-- This is for the high score input -->
+    <form>
+      <label for="initals">Enter Initials Here:</label><br>
+      <input type="text" id="playerInitials" name="playerInitials"><br>
+      <button id="register">Submit your Score</button>
+    </form>
+
+    </form>
+  </div>
 
 
 
-    <script src="script.js"></script>
-    </body>
-    </html>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

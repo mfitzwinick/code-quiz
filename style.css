@@ -10,8 +10,61 @@
     margin: 4px 2px;
     cursor: pointer;
   }
-  .submit {
+
+  .score-box {
+    background-color: blanchedalmond;
+    width: 40 px;
+    height: 30 px;
+    margin-left:90 px;
+    margin-right:90 px;
+    padding-left: 100 px;
+    padding-right: 100 px;
+    border: black;
+  }
+
+  .button-choice {
     background-color: #e98410;
+    border: none;
+    position: absolute;
+    color: white;
+    padding: 25px 50px 75px
+    text-align: center;
+    text-decoration: black;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 30 px;
+    margin-left: 500 px;
+    cursor: pointer;
+    
+  }
+
+.question-platter {
+    background-color: rgb(47, 144, 255); 
+    padding-top: 20 px;
+    padding-bottom: 20px;
+    padding-left: 50 px;
+    height: 400px;
+    width: 1000px;
+    margin:0 auto;
+    display: none;
+}
+
+.container {
+    background-color:yellow ;
+    height: 700px
+}
+
+.question-box {
+    background-color: lavenderblush;
+    padding-top: 15 px;
+    padding-bottom: 15 px;
+    height: 250 px;
+    width: 450 px;
+    border-color: black;
+}
+#register {
+    background-color: #e910c5;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -21,30 +74,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
 
-.question-platter {
-    background-color: rgb(47, 144, 255); 
-    padding-top: 20 px;
-    padding-bottom: 20px;
-    height: 400px;
-    width: 1000px;
-    margin:0 auto;
-}
-
-.container {
-    background-color:yellow ;
-    height: 700px
-}
-
-.question-box {
-
-    background-color: lavenderblush;
-    padding-top: 15 px;
-    padding-bottom: 15 px;
-    height: 250 px;
-    width: 450 px;
-    border-color: black;
 }
 
 
