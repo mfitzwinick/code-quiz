@@ -27,6 +27,7 @@ var timeRemaining = 60
 var startingScore = 0
 var answers = [];
 var questionBoxH1 = document.querySelector(".question-box")
+var highscoreBox = document.querySelector(".highscore-box")
 var choiceA = document.querySelector("#choice-a")
 var choiceB = document.querySelector("#choice-b")
 var choiceC = document.querySelector("#choice-c")
@@ -62,35 +63,64 @@ function countDownText() {
 var questions = [
     {q: "What is a dog?",
     pickOne: [
-        { select: "A) a piece of wood", ans: false },
-        { select: "B) your BFF", ans: true },
-        { select: "C) a chemical", ans: false },
-        { select: "D) a vacation", ans: false }]
-}, {
-    q: "where is the giraffe",
+         "A piece of wood",
+         "your BFF",
+        "a chemical",
+        "a vacation"],
+        answers: "your BFF"
+}, 
+{q: "where is the giraffe",
     pickOne: [
-        { select: "A) a piece of wood", ans: false },
-        { select: "B) your BFF", ans: false },
-        { select: "C) a chemical", ans: false },
-        { select: "D) on vacation", ans: true}]
-}, {
+        " a piece of wood",
+       "your BFF",
+        "a chemical",
+        "on vacation"]
+        answers: "on vacation"
+
+}, 
+{q: "What is a hotdog?"
+pickOne: [
+     "gasfdsagsad",
+     "asdsaFF",
+    "aagsdical",
+    "a asdadaation"],
+    answers: "asdsaFF"
 }]
 //create for loop for questions//
 
+function next (q, pickOne, answers) {
+    for (var i = 0; i<3; i++) {
+        questionBoxH1.textContent = q[i]
+    }
+        
+        )
+    for(var i = 0; i < pickOne.length; i++) {
+        var liEl = document.createElement("button");
+        liEl.textContent = pickOne[i]
+        platter.appendChild(liEl)
+        if(pickOne[0] === answers) {
+            alert(`You chose correctly`)
+        } 
+    }
+//     questions[0].pickOne
+// }
+
+//test(questions[0].pickOne, questions[0].answers)
+next (q[2].questions[2].pickOne, questions[2].answers)
 //create "click" function for Answer Choice//
 clickAnswer.addEventListener("click", function () {
-    populateQuestion();
+    next();
     scoreTally();
 });
 
-function populateQuestion(){
-    questionBoxH1.textContent=questions[0].q;
-    choiceA.textContent=questions[0].pickOne[0].select;
-    choiceB.textContent=questions[0].pickOne[1].select;
-    choiceC.textContent=questions[0].pickOne[2].select;
-    choiceD.textContent=questions[0].pickOne[3].select;
+// function populateQuestion(){
+//     questionBoxH1.textContent=questions[0].q;
+//     choiceA.textContent=questions[0].pickOne[0].select;
+//     choiceB.textContent=questions[0].pickOne[1].select;
+//     choiceC.textContent=questions[0].pickOne[2].select;
+//     choiceD.textContent=questions[0].pickOne[3].select;
     
-};
+// };
 
 function scoreTally () {
     for (var i=0; i <questions.length; i++) {
@@ -108,6 +138,7 @@ function scoreTally () {
 
 
 register.addEventListener("click", function () {
+    highscoreBox.appendChild(init);
    
 });
 // // {b: "Dogs Are Great", b1: "TRUE",  b2: "False"}
