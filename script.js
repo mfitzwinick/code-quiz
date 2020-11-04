@@ -42,7 +42,6 @@ var clickAnswer = document.querySelector(".button-choice")
 start.addEventListener("click", function () {
     timeRemaining--;
     countDownText();
-    // questionAppear();
     start.style.display = 'none'
     platter.style.display = 'block'
     populateQuestion();
@@ -59,9 +58,9 @@ function countDownText() {
         };
     }, 1000)
 }
-
-let questions = [{
-    q: "What is a dog?",
+//create Q & A in objects//
+var questions = [
+    {q: "What is a dog?",
     pickOne: [
         { select: "A) a piece of wood", ans: false },
         { select: "B) your BFF", ans: true },
@@ -76,10 +75,10 @@ let questions = [{
         { select: "D) on vacation", ans: true}]
 }, {
 }]
+//create for loop for questions//
+
+//create "click" function for Answer Choice//
 clickAnswer.addEventListener("click", function () {
-    timeRemaining--;
-    countDownText();
-    // questionAppear();
     populateQuestion();
     scoreTally();
 });
@@ -90,19 +89,27 @@ function populateQuestion(){
     choiceB.textContent=questions[0].pickOne[1].select;
     choiceC.textContent=questions[0].pickOne[2].select;
     choiceD.textContent=questions[0].pickOne[3].select;
+    
 };
 
 function scoreTally () {
-    if (ans = true) {
-        myScore.textContent=startingScore;
-        startingScore=+10;
+    for (var i=0; i <questions.length; i++) {
     }
-    if (ans = false) {
-        timeRemaining= -10;
+    if (ans=== true) {
+        myScore.textContent=startingScore;
+        startingScore+10;
+        alert ("CORRECT!")
+    }
+    if (ans=== false) {
+        timeRemaining-10;
+        alert ("INCORRECT ANSWER")
     }
 };
 
 
+register.addEventListener("click", function () {
+   
+});
 // // {b: "Dogs Are Great", b1: "TRUE",  b2: "False"}
 // // {c: "Which of these is a dog?", c1: "Primate" c2: "Poodle" c3: "Arachnid" }
 

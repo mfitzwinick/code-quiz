@@ -15,19 +15,30 @@ p {
     margin: 4px 2px;
     cursor: pointer;
   }
+  .show-highscore {
+    background-color: orangered;
+    border-radius: 50%;
+    margin-left: -50 px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
 
   .score-box {
     background-color: whitesmoke;
-    color: red
     width: 40 px;
-    height: 30 px;
+    height: 50 px;
     margin-left:90 px;
     margin-right:90 px;
     padding-left: 100 px;
     padding-right: 100 px;
-    border: black;
     font-weight: bold;
-    font-size: 60 px;
+    font-size: 100 px;
     font-family: Arial;
     
   }
@@ -86,6 +97,12 @@ p {
     cursor: pointer;
 
 }
+#score {
+  color: red
+    border-style: solid;
+    font-weight: bold;
+    font-size: 100 px;
+    font-family: Arial;
+    
 
-
-
+}
