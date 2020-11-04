@@ -43,6 +43,7 @@ start.addEventListener("click", function () {
     platter.style.display = 'block'
     next();
 });
+
 //Have timer start and end at 0//
 function countDownText() {
     var myCounter = setInterval(function () {
@@ -55,7 +56,8 @@ function countDownText() {
         };
     }, 1000)
 }
-//create Q & A in objects//
+
+//create Q & A in object array//
 var questions = [
     {
         q: "What is a dog?",
@@ -87,40 +89,75 @@ var questions = [
     }]
 //create for loop for questions//_--------------------------------------------
 
-function next(q, pickOne, answers) {
-    for (var i = 0; i < 3; i++) {
+function next() {
+    for (var i = 0; i < questions.length; i++) {
         // var qBox =document.createElement("div")
         questionBoxH1.textContent = questions[i].q
-        // questionBoxH1.appendChild (qBox)
+        choiceA.textContent = questions[i].pickOne[0]
+        choiceB.textContent = questions[i].pickOne[1]
+        choiceC.textContent = questions[i].pickOne[2]
+        choiceD.textContent = questions[i].pickOne[3]
     }
-    for (var i = 0; i < 4; i++) {
-        // var liEl = document.createElement("button");
-        choiceA.textContent = questions[i].pickOne
-        choiceB.textContent = questions[i].pickOne
-        choiceC.textContent = questions[i].pickOne
-        choiceD.textContent = questions[i].pickOne
+    if (questions == questions.length) {
+        return;
+    }
 
-        // platter.appendChild(liEl)
-        if (pickOne[i] === answers) {
-            myScore.textContent = startingScore;
-            startingScore + 10;
-            alert("CORRECT!")
-        }
-    else {  timeRemaining - 10;
-        alert("INCORRECT ANSWER")
-
-    }
-    }
+    // // }
+    // // }
+    // choiceA.addEventListener("click", function () {
+    //     next();
+    //     if (pickOne ("") = answers ("") {
+    //         myScore.textContent = startingScore;
+    //         startingScore + 10;
+    //         alert("CORRECT!")
+    //     }
+    //     else {
+    //         timeRemaining - 10;
+    //         alert("INCORRECT ANSWER")
+    //     };
+    //     choiceB.addEventListener("click", function () {
+    //         next();
+    //         if (answers[i]=true) {
+//                 myScore.textContent = startingScore;
+//                 startingScore + 10;
+//                 alert("CORRECT!")
+//             }
+//             else {
+//                 timeRemaining - 10;
+//                 alert("INCORRECT ANSWER")
+//             };
+//             choiceC.addEventListener("click", function () {
+//                 next();
+//                 if (answers[i]==true) {
+//                     myScore.textContent = startingScore;
+//                     startingScore + 10;
+//                     alert("CORRECT!")
+//                 }
+//                 else {
+//                     timeRemaining - 10;
+//                     alert("INCORRECT ANSWER")
+//                 };
+//                 choiceD.addEventListener("click", function () {
+//                     next();
+//                     if (answers[i]=true) {
+//                         myScore.textContent = startingScore;
+//                         startingScore + 10;
+//                         alert("CORRECT!")
+//                     }
+//                     else {
+//                         timeRemaining - 10;
+//                         alert("INCORRECT ANSWER")
+//                     };
     //     questions[0].pickOne
     // }
 
-    //test(questions[0].pickOne, questions[0].answers)
-    next(q[2].questions[2].pickOne, questions[2].answers)
-    //create "click" function for Answer Choice//
-    clickAnswer.addEventListener("click", function () {
-        next();
-        scoreTally();
-    });
+    // //test(questions[0].pickOne, questions[0].answers)
+    // next(q[2].questions[2].pickOne, questions[2].answers)
+    // //create "click" function for Answer Choice//
+    // clickAnswer.addEventListener("click", function () {
+    //     next();
+    //     scoreTally();
+    // });
 
     // function populateQuestion(){
     //     questionBoxH1.textContent=questions[0].q;
@@ -146,9 +183,8 @@ function next(q, pickOne, answers) {
     // };
 
 
-    register.addEventListener("click", function (event) {
-        event.preventDefault();
-        highscoreBox.appendChild(init);
+    // register.addEventListener("click", function (event) {
+    //     event.preventDefault();
+    //     highscoreBox.appendChild(init);
 
-    });
-}
+    // });
