@@ -90,16 +90,15 @@ var questions = [
 function next(q, pickOne, answers) {
     for (var i = 0; i < 3; i++) {
         // var qBox =document.createElement("div")
-        qBox.textContent = q[i]
+        questionBoxH1.textContent = questions[i].q
         // questionBoxH1.appendChild (qBox)
     }
-        
-    for (var i = 0; i < pickOne.length; i++) {
+    for (var i = 0; i < 4; i++) {
         // var liEl = document.createElement("button");
-        choiceA.textContent = pickOne[i]
-        choiceB.textContent = pickOne[i]
-        choiceC.textContent = pickOne[i]
-        choiceD.textContent = pickOne[i]
+        choiceA.textContent = questions[i].pickOne
+        choiceB.textContent = questions[i].pickOne
+        choiceC.textContent = questions[i].pickOne
+        choiceD.textContent = questions[i].pickOne
 
         // platter.appendChild(liEl)
         if (pickOne[i] === answers) {
