@@ -170,15 +170,19 @@ choiceD.addEventListener("click", function () {
 console.log(questions[currentQuestion].pickOne[0])
 console.log(questions[0].answers)
 
-var arr = [];
+//work on HIGH SCORES//
     register.addEventListener("click", function (event) {
         event.preventDefault();
-        arr.push(init);
-        arr.push(startingScore);
+        winner.push(init);
+        winner.push(startingScore);
     });
-        localStorage.setItem("initials", JSON.stringify(init));
-        localStorage.setItem("final score", myScore),        
-  
+        localStorage.setItem("initials", JSON.stringify(winner));
+        localStorage.setItem("final score", JSON.stringify(myScore));        
+        
+        var lastPlayer=JSON.parse(localStorage.getItem("init"))
+        var winner= {
+        
+        }
     
 highscoreBtn.addEventListener("click", function () {
     modal.style.display = 'block'
