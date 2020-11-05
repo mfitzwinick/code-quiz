@@ -3,6 +3,18 @@ p {
     font-size: large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+#creature {
+  height: 500px;
+  width:  320 px;
+  float: right;
+  border-color: black;
+  border-width: thick;
+}
+# title {
+margin-top: 40px;
+margin-left: 300px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
 .start {
     background-color: #4CAF50;
     border: none;
