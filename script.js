@@ -62,7 +62,6 @@ var questions = [
             "a reptile",
             "a piece of clothing"],
         answers: "a feline"
-
     },
     {
         q: "What is a fish?",
@@ -93,12 +92,13 @@ function next(i) {
     choiceB.textContent = questions[i].pickOne[1]
     choiceC.textContent = questions[i].pickOne[2]
     choiceD.textContent = questions[i].pickOne[3]
-    currentQuestion = i + 1
-    if (i == questions.length - 1) {
+    currentQuestion = i+1
+    if (i == questions.length-1) {
         platter.style.display = 'none'
         return;
     }
 };
+// 
 
 var thisQ = questions[currentQuestion];
 
@@ -106,6 +106,8 @@ choiceA.addEventListener("click", function () {
     if (thisQ.pickOne[0] === thisQ.answers) {
         startingScore +=10;
         alert("CORRECT!")
+        next(currentQuestion);
+       myScore.innerHTML=startingScore
 
     }
     else {
@@ -152,7 +154,6 @@ choiceC.addEventListener("click", function () {
 })
 choiceD.addEventListener("click", function () {
     if (questions[currentQuestion].pickOne[3] === questions[currentQuestion].answers){
-        myScore.textContent = startingScore;
         startingScore +=10;
         alert("CORRECT!")
         next(currentQuestion);
