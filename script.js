@@ -1,21 +1,11 @@
 
-//#Pseudo Code//
-
-//hide start button after it is clicked once- DONE
-//have timer begin countdown- DONE
-///with add event listner for points and timer- HELP WHAT AM I DOING HERE?
-//2. At click, first question appears - append object???????
-
-
-//CREATE A "REGISTER YOUR SCORE" BUTTON w/ move to local storage
-// High Scores into local storage
-
 //set variables//
 var start = document.querySelector(".start")
 var register = document.querySelector("#register")
 var platter = document.querySelector(".question-platter")
 var questionBoxH1 = document.querySelector(".question-box")
 var highscoreBox = document.querySelector(".highscore-box")
+var highscoreBtn = document.querySelector(".show-highscore")
 var choiceA = document.querySelector("#choice-a")
 var choiceB = document.querySelector("#choice-b")
 var choiceC = document.querySelector("#choice-c")
@@ -23,11 +13,11 @@ var choiceD = document.querySelector("#choice-d")
 const timerDisplay = document.querySelector("#time-shown")
 var myScore = document.querySelector("#score")
 var clickAnswer = document.querySelector(".button-choice")
-var modalEl = document.querySelector("#modal-container");
-var modalText =document.querySelector(".modal-body")
+var modal =document.querySelector(".modal")
 var init = document.querySelector("#playerInitials");
 var timeRemaining = 60
-var startingScore = 0
+var startingScore = 33
+startingScore.innerHTML=myScore
 var answers = [];
 var finalScore = "";
 
@@ -47,7 +37,7 @@ function countDownText() {
         timeRemaining--;
         if (timeRemaining == 0) {
             clearInterval(myCounter)
-            alert("Times Up!" + "Your score is ???");
+            alert("Your Time is UP!");
             return;
         };
     }, 1000)
@@ -65,24 +55,34 @@ var questions = [
         answers: "your BFF"
     },
     {
-        q: "where is the giraffe",
+        q: "what is a cat?",
         pickOne: [
-            " a piece of wood",
-            "your BFF",
-            "a chemical",
-            "on vacation"],
-        answers: "on vacation"
+            " an amphibian",
+            "a feline",
+            "a reptile",
+            "a piece of clothing"],
+        answers: "a feline"
 
     },
     {
-        q: "What is a nugo?",
+        q: "What is a fish?",
         pickOne: [
-            "gasfdsagsad",
-            "asdsaFF",
-            "aagsdical",
-            "a asdadaation"],
-        answers: "asdsaFF"
-    }]
+            "a whale",
+            "a mackerel",
+            "a kind of rock",
+            "an arachnid"],
+        answers: "a mackerel"
+    },
+    {
+        q: "What is a human?",
+        pickOne: [
+            "a robot",
+            "an animal",
+            "a battery",
+            "an idea"],
+        answers: "an animal"
+    }
+]
 //create a function to populate Q&A//
 
 var currentQuestion = 0
@@ -99,10 +99,10 @@ function next(i) {
         return;
     }
 };
-var thisQ = questions[currentQuestions];
-//program each ANSWER BUTTON with EventListner and if/else//
+
+var thisQ = questions[currentQuestion];
+
 choiceA.addEventListener("click", function () {
-    next(currentQuestion);
     if (thisQ.pickOne[0] === thisQ.answers) {
         startingScore +=10;
         alert("CORRECT!")
@@ -112,58 +112,76 @@ choiceA.addEventListener("click", function () {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
+    next(currentQuestion);
+    myScore.innerHTML=startingScore
    
 })
 
 choiceB.addEventListener("click", function () { 
-    next(currentQuestion);
+    
     if (thisQ.pickOne[1] === thisQ.answers) {
     
         startingScore +=10;
         alert("CORRECT!")
+        next(currentQuestion);
+        myScore.innerHTML=startingScore;
     }
     else {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
+    next(currentQuestion);
+    myScore.innerHTML=startingScore
     
 })
 
 
 choiceC.addEventListener("click", function () {
     if (questions[currentQuestion].pickOne[2] === questions[currentQuestion].answers ){
-        myScore.textContent = startingScore;
         startingScore +=10;
         alert("CORRECT!")
+        next(currentQuestion);
+        myScore.innerHTML=startingScore;
     }
     else {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
     next(currentQuestion);
+    myScore.innerHTML=startingScore;
 })
 choiceD.addEventListener("click", function () {
     if (questions[currentQuestion].pickOne[3] === questions[currentQuestion].answers){
         myScore.textContent = startingScore;
         startingScore +=10;
         alert("CORRECT!")
+        next(currentQuestion);
+        myScore.innerHTML=startingScore;
     }
     else {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
     next(currentQuestion);
+    myScore.innerHTML=startingScore;
 })
+
 console.log(questions[currentQuestion].pickOne[0])
 console.log(questions[0].answers)
 
-var arr = winnerArray[];
+var arr = [];
     register.addEventListener("click", function (event) {
         event.preventDefault();
         arr.push(init);
-    }
+        arr.push(startingScore);
+    });
+        localStorage.setItem("initials", JSON.stringify(init));
+        localStorage.setItem("final score", myScore),        
+  
     
- 
+highscoreBtn.addEventListener("click", function () {
+    modal.style.display = 'block'
+});
 
 
 
