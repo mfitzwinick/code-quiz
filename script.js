@@ -86,6 +86,10 @@ var questions = [
 
 var currentQuestion = 0
 function next(i) {
+    if (i == questions.length) {
+        platter.style.display = 'none'
+        return;
+    }
     currentQuestion = i
     questionBoxH1.textContent = questions[i].q
     choiceA.textContent = questions[i].pickOne[0]
@@ -93,10 +97,7 @@ function next(i) {
     choiceC.textContent = questions[i].pickOne[2]
     choiceD.textContent = questions[i].pickOne[3]
     currentQuestion = i+1
-    if (i == questions.length-1) {
-        platter.style.display = 'none'
-        return;
-    }
+    
 };
 // 
 
@@ -106,7 +107,6 @@ choiceA.addEventListener("click", function () {
     if (thisQ.pickOne[0] === thisQ.answers) {
         startingScore +=10;
         alert("CORRECT!")
-        next(currentQuestion);
        myScore.innerHTML=startingScore
 
     }
@@ -125,7 +125,6 @@ choiceB.addEventListener("click", function () {
     
         startingScore +=10;
         alert("CORRECT!")
-        next(currentQuestion);
         myScore.innerHTML=startingScore;
     }
     else {
@@ -142,7 +141,6 @@ choiceC.addEventListener("click", function () {
     if (questions[currentQuestion].pickOne[2] === questions[currentQuestion].answers ){
         startingScore +=10;
         alert("CORRECT!")
-        next(currentQuestion);
         myScore.innerHTML=startingScore;
     }
     else {
@@ -156,7 +154,6 @@ choiceD.addEventListener("click", function () {
     if (questions[currentQuestion].pickOne[3] === questions[currentQuestion].answers){
         startingScore +=10;
         alert("CORRECT!")
-        next(currentQuestion);
         myScore.innerHTML=startingScore;
     }
     else {
@@ -173,17 +170,19 @@ console.log(questions[0].answers)
 //work on HIGH SCORES//
     register.addEventListener("click", function (event) {
         event.preventDefault();
-        winner.push(init);
-        winner.push(startingScore);
-    });
-        localStorage.setItem("initials", JSON.stringify(winner));
-        localStorage.setItem("final score", JSON.stringify(myScore));        
-        
-        var lastPlayer=JSON.parse(localStorage.getItem("init"))
-        var winner= {
-        
+        var winner= {}
+        var winners=[]
+        var lastPlayer=JSON.parse(localStorage.getItem("winners"))
+        if (lastPlayer!==null) {
+            winners=lastPlayer
         }
-    
+        winner.init=init.value
+        winner.score=startingScore
+        winners.push(winner);
+        localStorage.setItem("winners", JSON.stringify(winners));          
+        
+        
+    });
 highscoreBtn.addEventListener("click", function () {
     modal.style.display = 'block'
 });
