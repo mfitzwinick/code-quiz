@@ -97,9 +97,8 @@ function next(i) {
 };
 //program each ANSWER BUTTON with EventListner and if/else//
 choiceA.addEventListener("click", function () {
-    if (questions[currentQuestion].pickOne[0] === questions[currentQuestion].answers[0]) {
+    if (questions[i].pickOne[0] === questions[i].answers[0]) {
         startingScore +=10;
-        myScore.textContent = startingScore;
         alert("CORRECT!")
     }
     else {
