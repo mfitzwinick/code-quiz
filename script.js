@@ -23,6 +23,9 @@ var choiceD = document.querySelector("#choice-d")
 const timerDisplay = document.querySelector("#time-shown")
 var myScore = document.querySelector("#score")
 var clickAnswer = document.querySelector(".button-choice")
+var modalEl = document.querySelector("#modal-container");
+var modalText =document.querySelector(".modal-body")
+var init = document.querySelector("#playerInitials");
 var timeRemaining = 60
 var startingScore = 0
 var answers = [];
@@ -92,25 +95,30 @@ function next(i) {
     choiceD.textContent = questions[i].pickOne[3]
     currentQuestion = i + 1
     if (i == questions.length - 1) {
+        platter.style.display = 'none'
         return;
     }
 };
+var thisQ = questions[currentQuestions];
 //program each ANSWER BUTTON with EventListner and if/else//
 choiceA.addEventListener("click", function () {
-    if (questions[i].pickOne[0] === questions[i].answers[0]) {
+    next(currentQuestion);
+    if (thisQ.pickOne[0] === thisQ.answers) {
         startingScore +=10;
         alert("CORRECT!")
+
     }
     else {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
-    next(currentQuestion);
+   
 })
 
-choiceB.addEventListener("click", function () {
-    if (questions[i].pickOne[1] === questions[i].answers[1]) {
-        myScore.textContent = startingScore;
+choiceB.addEventListener("click", function () { 
+    next(currentQuestion);
+    if (thisQ.pickOne[1] === thisQ.answers) {
+    
         startingScore +=10;
         alert("CORRECT!")
     }
@@ -118,12 +126,12 @@ choiceB.addEventListener("click", function () {
         timeRemaining -=10;
         alert("INCORRECT ANSWER")
     };
-    next(currentQuestion);
+    
 })
 
 
 choiceC.addEventListener("click", function () {
-    if (questions[currentQuestion].pickOne[2]("") === questions[currentQuestion].answers[2]("")) {
+    if (questions[currentQuestion].pickOne[2] === questions[currentQuestion].answers ){
         myScore.textContent = startingScore;
         startingScore +=10;
         alert("CORRECT!")
@@ -135,7 +143,7 @@ choiceC.addEventListener("click", function () {
     next(currentQuestion);
 })
 choiceD.addEventListener("click", function () {
-    if (questions[currentQuestion].pickOne[3] === questions[currentQuestion].answers[3]) {
+    if (questions[currentQuestion].pickOne[3] === questions[currentQuestion].answers){
         myScore.textContent = startingScore;
         startingScore +=10;
         alert("CORRECT!")
@@ -146,11 +154,16 @@ choiceD.addEventListener("click", function () {
     };
     next(currentQuestion);
 })
+console.log(questions[currentQuestion].pickOne[0])
+console.log(questions[0].answers)
+
+var arr = winnerArray[];
+    register.addEventListener("click", function (event) {
+        event.preventDefault();
+        arr.push(init);
+    }
+    
+ 
 
 
 
-    // register.addEventListener("click", function (event) {
-    //     event.preventDefault();
-    //     highscoreBox.appendChild(init);
-
-    // });
