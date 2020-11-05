@@ -12,12 +12,14 @@ All files are nested in the code-quiz file.  The index.html is a file that is li
 
 # Challenges and Observations
 
-Although I can see that I have come a long way in utilizing html, css and js skills, I could have easily taken another week with the project.  I set up the html and css pages quickly, and spent most of my time in javascript.  I really struggled with the functionality of to get the questions on the page.  I spend a great deal of time experimenting with loops, but didn't get the result I wanted.  I ultimately decided against the loop, and put a counter into a function, but it isn't working perfectly either. 
+This was truly a challenge!
+
+Although I can see that I have come a long way in utilizing html, css and js skills, I could have easily taken another week with this project.  I set up the html and css pages quickly, and spent most of my time in javascript.  I really struggled with the functionality of how to get the questions on the page.  I spent a great deal of time experimenting with loops, but didn't get the result I wanted.  I ultimately decided against the loop, and put a counter into a function, but it isn't working perfectly either. 
 I could have spent many more hours on this if time allowed.
 
 I did feel good about getting my Event Listeners to work.  I feel like that was a success!  Unfortunately, I left the high score portion and styling to the end,so I didn't have the time to really get those in place as desired (Yes, I know this looks like a cheesy waiting room game from the 90's !).
 
-Overall, I found this to be incredibly challenging; and I admit, I felt quite discouraged in the process. Since I was scrambling to apply so many different things into one project, I didn't feel like I was able to perfect any one thing.  Given more time, I know I could have done a much better job with this; however, I think having this under my belt, I think I could start fresh on a new project with a revised thought process and perspective.
+Overall, I found this to be incredibly challenging; and I admit, I felt quite discouraged in the process. Since I was scrambling to apply so many different things into one project, I didn't feel like I was able to perfect any one thing.  Given more time, I know I could have done a much better job with this; however, I think having this under my belt, I believe I will start fresh on a new project with a revised thought process and perspective.
 
 # Content Provided
 
