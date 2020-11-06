@@ -50,8 +50,8 @@
     <div class="score-box">FINAL SCORE:<span id="score"></span></div>
     <!-- This is for the high score input -->
     <br>
-    <form>
-      <label for="initals">Enter Initials Here:</label><br>
+    <form id="winnerForm" method="POST">
+      <label for="playerInitials">Enter Initials Here:</label><br>
       <input type="text" id="playerInitials" name="playerInitials"><br>
       <button id="register">Submit your Score</button>
     </form>
@@ -63,33 +63,16 @@
 <div class="modal">
   ...
 
-  <table class="table">
-    <thead>
       <h1>HIGH SCORES</h1>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">initials</th>
-        <th scope="col">score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>10</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>0</td>
-      </tr>
-    </tbody>
-  </table>
+
+      <ul class="finalList">
+        <li>NAME</li>
+        <li>SCORE</li>
+
+
+
+      </ul>
+     
 </div>
 </div>
 
@@ -97,13 +80,7 @@
 
  </div>
 
-
-
- 
-
-
   
-
 
 
   <script src="script.js"></script>

@@ -1,7 +1,7 @@
 
 //set variables//
 var start = document.querySelector(".start")
-var register = document.querySelector("#register")
+var register = document.querySelector("#winnerForm")
 var platter = document.querySelector(".question-platter")
 var questionBoxH1 = document.querySelector(".question-box")
 var highscoreBox = document.querySelector(".highscore-box")
@@ -14,13 +14,16 @@ const timerDisplay = document.querySelector("#time-shown")
 var myScore = document.querySelector("#score")
 var clickAnswer = document.querySelector(".button-choice")
 var modal =document.querySelector(".modal")
-var init = document.querySelector("#playerInitials");
+var playerInitial = document.querySelector("#playerInitials");
 var timeRemaining = 60
 var startingScore = 0
 startingScore.innerHTML=myScore
 var answers = [];
-var finalScore = "";
+var winners="";
+var finalList=document.querySelector(".finalList");
 
+
+findInitial();
 //create EventListener for Start button//
 start.addEventListener("click", function () {
     timeRemaining--;
@@ -168,24 +171,54 @@ console.log(questions[currentQuestion].pickOne[0])
 console.log(questions[0].answers)
 
 //work on HIGH SCORES//
-    register.addEventListener("click", function (event) {
+function saveInitials () {
+    if (playerInitial!==null){
+    localStorage.setItem("winnersJSON", JSON.stringify(winners)); 
+}
+
+}
+function findInitial () {
+    savedInitials=JSON.parse(localStorage.getItem("winnersJSON"))  
+    if(savedInitials!==null) {
+        winners=savedInitials
+    }
+};
+function renderFinal () {
+    finalList.innerHTML="";
+    for (var i=0; i<winners.length; i++) {
+        var winner=winners[i];
+        var li=document.createElement("li");
+        li.textContent=winner;
+        li.setAttribute("data-index",i);
+        finalList.appendChild(li);
+    };
+    saveInitials();
+}
+var newWinner= playerInitial.value.trim();
+
+register.addEventListener("submit", function (event) {
         event.preventDefault();
-        var winner= {}
-        var winners=[]
-        var lastPlayer=JSON.parse(localStorage.getItem("winners"))
-        if (lastPlayer!==null) {
-            winners=lastPlayer
+       
+        if (newWinner===""){
+            return;
         }
-        winner.init=init.value
-        winner.score=startingScore
-        winners.push(winner);
-        localStorage.setItem("winners", JSON.stringify(winners));          
+        else {
+            alert ("YOUR SCORE IS ADDED")
+            saveInitials();
+        }
         
-        
+
     });
+   
+    saveInitials();
+    renderFinal();
+    winners.concat(newWinner);
 highscoreBtn.addEventListener("click", function () {
     modal.style.display = 'block'
 });
 
 
+// var startingScore = 0
+// startingScore.innerHTML=myScore
 
+// function 
