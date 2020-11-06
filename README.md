@@ -1,6 +1,6 @@
 # code-quiz
 
-The objective of this project was to create a quiz.  The quiz will have a countdown timer and a place for high scores.  If the player choses an answer incorrectly, 10 seconds will be deducted from their timer. We were to generate html, css, and js files to complete the project.
+The objective of this project was to create a quiz.  The quiz will have a countdown timer and a place for high scores.  If the player choses an answer incorrectly, 10 seconds will be deducted from their timer. HTML, CSS, and Javascript files are needed to complete the project.
 
 # How to Access the Work
 
